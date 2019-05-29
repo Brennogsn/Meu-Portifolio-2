@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>SnakeGame</title>
+    <link rel="stylesheet" href="snakegame.css">
+</head>
+<body>
+    <canvas id="canvas" width="400" height="400"></canvas>
+    <h1> Welcome to my Snake Game !</h1>
+    <h2>Created in JavaScript !</h2>
+    <nav id="back">
+            <ul>
+                <li><a href="#"q>Voltar a Home</a>
+            </ul>
+        </nav>   
+    <div class="container">
+        <div class="box">
+            <div class="icon"><img src="controller.png" class="contro"/></div>
+        </div>
+        <div class="box">
+        </div>
+        <div class="box">
+        </div>
+    </div>
+    <div class="text">
+        <p class="tutorial"> To start the game, press the button<br> on your keyboard to the<br> left, right, top or low.</p>
+        <p class="bio">Todo a programação da pagina como<br> um todo foi feita por mim (João Bortolosso)<br> em torno de 5 horas de desenvolvimento.</p>
+        <p class="sobre">Essa pagina foi criando em HTML e CSS<br> e o jogo foi desenvolvido em JavaScript<br> sem nenhuma biblioteca ou framework.</p>
+    </div>
+    <script>
+            window.onload = function(){
+                canvas = document.getElementById("canvas");
+                ctx = canvas.getContext("2d");
+                document.addEventListener("keydown", function(e){
+                    console.log(e.keyCode);
+                    switch(e.keyCode){
+                        case 37:
+                            velX = -1;
+                            velY = 0;
+                            break;
+                        case 38:
+                            velY = -1;
+                            velX = 0;
+                            break;
+                        case 39:
+                            velX = 1;
+                            velY =0;
+                            break;
+                        case 40:
+                            velY = 1;
+                            velX = 0
+                            break;
+                    }
+                });
+                setInterval(jogo, 100);
+            }
+            positionX = 10;
+            positionY = 10;
+            foodX = 15;
+            foodY = 15;
+            velX = 0;
+            velY = 0;
+            grid = 20;
+            snake = [];
+            tam = 5;
+            function jogo(){
+                positionX += velX;
+                positionY +=velY;
+                console.log(positionX);
+                if(positionX < 0){
+                    positionX = grid;
+                }
+                if(positionX > grid){
+                    positionX = 0; 
+                }
+                if(positionY < 0){
+                    positionY = grid;
+                }
+                if(positionY > grid){
+                    positionY = 0; 
+                }
+                
+                ctx.fillStyle = "#1a53ff";
+                ctx.fillRect(0,0, canvas.width, canvas.height);
+                
+                
+                ctx.fillStyle = "black";
+                for(var i=0; i < snake.length; i ++){
+                    ctx.fillRect(snake[i].x * grid, snake[i].y * grid, grid - 1 , grid - 1);
+                    if(snake[i].x == positionX && snake[i].y == positionY){
+                        tam = 5;
+                    }
+                }  
+                snake.push({x: positionX, y: positionY});
+                while(snake.length > tam){
+                    snake.shift();
+                }
+                ctx.fillStyle = "red";
+                ctx.fillRect(foodX* grid, foodY * grid, grid - 1, grid - 1);
+                if(positionX == foodX && positionY == foodY){
+                    tam++;
+                    foodX = Math.floor(Math.random() * grid);
+                    foodY = Math.floor(Math.random() * grid);
+                }
+                
+            }
+            
+    </script>
+</body>
+</html>

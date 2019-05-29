@@ -1,0 +1,130 @@
+body {
+    background-color: #ebebe0;
+    margin: 30px;
+    padding: 0px;
+}
+
+#canvas {
+    position: absolute;
+    top: 135px;
+    left: 755px;
+    width: 400px;
+    height: 400px;
+    border-radius: 5px;
+    box-shadow: 6px 6px 6px #9c9a9a;
+}
+
+h1 {
+    font-size: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', sans-serif;
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 540;
+    margin: 30px;
+    text-align: center;
+    font-weight: 900;
+}
+
+h2 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: none;
+    margin: 0px;
+    text-align: center;
+}
+
+#back ul {
+    position: absolute;
+    top:120px;
+    left: 400px;
+    border-radius: 15px;
+    padding-bottom: 30px;
+    letter-spacing: 3px;
+}
+
+#back ul li {
+    display: inline;
+}
+
+#back ul li a {
+    padding: 1px 30px;
+    display: inline-block;
+
+    /* visual do link */
+    background-color: #ededed;
+    color: #333;
+    text-decoration: none;
+    border-bottom: 4px solid red;
+}
+
+#back ul li a:hover {
+    background-color: #ebebe0;
+    color: black;
+    border-bottom: 5px solid #ea0000;
+}
+
+a {
+    background-color: #1a53ff;
+    box-shadow: 0 6px 0 #4d79ff;
+    border-radius: 100px;
+    color: black;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: Arial;
+    font-weight: 900;
+  }
+  
+a:hover {
+    background-color: #fff;
+}
+  
+a:active {
+    box-shadow: none;
+    top: 5px;
+}
+
+.container{
+    position: relative;
+    width: 1200px;
+    height: 300px;
+    top: 400px;
+    margin: 40px auto;   
+    border-radius: 5px;
+}
+
+.container .box {
+    position: relative;
+    width: calc(400px - 30px);
+    height: calc(300px - 30px);
+    background-color: #9c9a9a;
+    float: left;
+    margin: 15px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+div.text {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 550;
+    font-size: 16px;
+}
+
+.tutorial {
+    position: absolute;
+    top: 605px;
+    left: 400px;
+}
+
+.bio{
+    position: absolute;
+    top: 680px;
+    left: 800px;
+}
+
+.sobre{
+    position: absolute;
+    top: 755px;
+    left: 1200px;
+}
